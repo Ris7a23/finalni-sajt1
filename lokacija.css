@@ -1,0 +1,460 @@
+/* Keyframe animacije za scroll su sada u header.css */
+
+.lokacija{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 90px clamp(20px, 5vw, 80px);
+    
+    background: linear-gradient(135deg, #f4c430 0%, #e1b12c 100%);
+}
+
+
+.lokacija .naslov p{
+    font-size: 80px;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 67px;
+    letter-spacing: 0.3em;
+}
+
+
+.lokacija-sadrzaj{
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    max-width: 1680px;
+    align-items: stretch;
+}
+
+
+.tekst{
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+
+.gore{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 45px;    
+}
+
+
+.adresa,
+.telefon,
+.email{
+    font-family: 'Rubik', monospace;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 28px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.ikona-lokacija,
+.ikona-telefon{
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.ikona-email{
+    width: 45px;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+
+/* Desktop hover efekte */
+@media (min-width: 1025px) {
+    .adresa:hover,
+    .telefon:hover,
+    .email:hover {
+        transform: translateX(8px);
+        color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .adresa:hover .ikona-lokacija,
+    .telefon:hover .ikona-telefon,
+    .email:hover .ikona-email {
+        transform: scale(1.2) rotate(-8deg);
+    }
+    
+    .adresa:hover .ikona-lokacija {
+        transform: scale(1.2) rotate(8deg);
+    }
+}
+
+
+.dole{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.radno-vreme-div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.radno-vreme-naslov p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color:#ffffff;
+}
+.radno-vreme-tekst{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.radno-vreme-tekst p{
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.zakazi-brzo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+.zakazi-brzo p{
+    font-family: 'Lato',sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    
+}
+
+
+.dugmici{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 29px;
+}
+
+.dugme-lokacija1,
+.dugme-lokacija2{
+   
+    padding: 24px 120px;
+    font-size: 22px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    text-decoration: none;
+}
+
+.dugme-lokacija1::before,
+.dugme-lokacija2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.dugme-lokacija1:hover::before,
+.dugme-lokacija2:hover::before {
+    left: 100%;
+}
+
+.ig-logo{
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+}
+
+
+.dugme-lokacija1{
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dugme-lokacija1:hover{
+    background-color: #1a1a1a;
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.05em;
+}
+
+.dugme-lokacija1:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+
+.dugme-lokacija2{
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+}
+
+.dugme-lokacija2 p {
+    margin: 0;
+}
+
+.dugme-lokacija2:hover{
+    background-color: #f0f0f0;
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em;
+}
+
+.dugme-lokacija2:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+
+.mapa{
+    flex: 1;
+    display: flex;
+}
+
+.mapa iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 420px;  
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+
+@media (max-width: 768px) {
+    .lokacija {
+        padding: 60px clamp(15px, 4vw, 30px);
+        gap: 30px;
+    }
+
+    .lokacija .naslov p {
+        font-size: clamp(40px, 10vw, 60px);
+        margin-bottom: 30px;
+        letter-spacing: 0.2em;
+    }
+
+    .lokacija-sadrzaj {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .tekst {
+        flex: 1;
+        text-align: center;
+        order: 1;
+    }
+
+    .gore {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .adresa,
+    .telefon,
+    .email {
+        font-size: 16px;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding: 12px 15px;
+        border-radius: 8px;
+        transition: all 0.15s ease;
+        display: flex;
+        width: auto;
+    }
+    
+    .adresa:active,
+    .telefon:active,
+    .email:active {
+        background-color: rgba(244, 196, 48, 0.2);
+        transform: scale(0.96);
+    }
+
+    .ikona-lokacija,
+    .ikona-telefon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .ikona-email {
+        width: 30px;
+        height: 24px;
+    }
+
+    .dole {
+        padding-top: 0;
+        gap: 20px;
+    }
+
+    .radno-vreme-div {
+        gap: 12px;
+    }
+
+    .radno-vreme-naslov p {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .radno-vreme-tekst {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .radno-vreme-tekst p {
+        font-size: 15px;
+        margin-top: 0;
+        font-weight: 600;
+    }
+
+    .zakazi-brzo {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .zakazi-brzo p {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .dugmici {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .dugme-lokacija1,
+    .dugme-lokacija2 {
+        padding:8px 24px;
+        font-size: 14px;
+        
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Aktivni klik efekti na dugme */
+    .dugme-lokacija1:active {
+        transform: scale(0.92) translateY(2px);
+        background-color: #0a0a0a;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .dugme-lokacija2:active {
+        transform: scale(0.92) translateY(2px);
+        background-color: #e0e0e0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), inset 0 1px 3px rgba(255, 255, 255, 0.8);
+    }
+
+    .mapa {
+        width: 100%;
+        min-height: 300px;
+        order: 2;
+    }
+
+    .mapa iframe {
+        min-height: 300px;
+    }
+}
+
+/* Tablet verzija - 768px do 1024px */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .lokacija {
+        padding: 70px clamp(20px, 4vw, 50px);
+        gap: 40px;
+    }
+
+    .lokacija .naslov p {
+        font-size: clamp(50px, 8vw, 70px);
+        margin-bottom: 40px;
+    }
+
+    .lokacija-sadrzaj {
+        gap: 60px;
+    }
+
+    .radno-vreme-tekst {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .dugme-lokacija1,
+    .dugme-lokacija2 {
+        padding: 20px 60px;
+        font-size: 18px;
+    }
+
+    .mapa iframe {
+        min-height: 380px;
+    }
+}
+
+/* Desktop verzija - iznad 1024px */
+@media (min-width: 1025px) {
+    .gore {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px 40px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .adresa {
+        width: 100%;
+    }
+
+    .telefon,
+    .email {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    .dugme-lokacija1,
+    .dugme-lokacija2 {
+        transform: translateY(0);
+    }
+
+    .dugme-lokacija1:hover {
+        background-color: #000;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .dugme-lokacija2:hover {
+        background-color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+}
